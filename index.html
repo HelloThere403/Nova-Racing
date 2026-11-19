@@ -1,1 +1,77 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Racing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game">
+        <div id="hud">
+            <div class="hud-top">
+                <div class="brand">NOVA<span>RACING</span></div>
+                <div class="race-info">
+                    <div id="lap">LAP 1 / 3</div>
+                    <div id="timer">00:00.00</div>
+                </div>
+            </div>
+
+            <div class="hud-bottom">
+                <div class="speed-box">
+                    <div class="speed-number">
+                        <span id="speed">0</span>
+                        <small>KM/H</small>
+                    </div>
+                    <div class="speed-label">VELOCITY</div>
+                </div>
+
+                <div class="nitro-box">
+                    <div class="nitro-title">NITRO</div>
+                    <div class="nitro-track">
+                        <div id="nitro-fill"></div>
+                    </div>
+                    <div id="nitro-label">100%</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="center-message"></div>
+
+        <div id="menu" class="overlay">
+            <div class="menu-content">
+                <div class="menu-logo">NOVA<span>RACING</span></div>
+                <p class="subtitle">THE NEXT GENERATION OF STREET RACING</p>
+                <h1>OWN THE ROAD.</h1>
+                <p class="description">
+                    Race. Drift. Boost. Become a legend.
+                </p>
+                <button id="start-button">START RACE</button>
+                <div class="instructions">
+                    <span>↑ ACCELERATE</span>
+                    <span>↓ BRAKE</span>
+                    <span>← → STEER</span>
+                    <span>SPACE NITRO</span>
+                </div>
+                <p class="version">NOVA RACING • VERSION 1.0</p>
+            </div>
+        </div>
+
+        <div id="finish-screen" class="overlay hidden">
+            <div class="menu-content">
+                <p class="subtitle">RACE COMPLETE</p>
+                <h1 id="result-title">FINISHED!</h1>
+                <p id="result-text"></p>
+                <button id="restart-button">RACE AGAIN</button>
+            </div>
+        </div>
+
+        <div id="loading">LOADING NOVA RACING...</div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>
+
