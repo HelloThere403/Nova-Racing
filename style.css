@@ -1,1 +1,260 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050b13;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#hud {
+    position: absolute;
+    inset: 0;
+    padding: 25px 35px;
+    pointer-events: none;
+    display: none;
+    z-index: 2;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.brand, .menu-logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+.brand span, .menu-logo span {
+    color: #00e5b0;
+}
+
+.race-info {
+    text-align: right;
+    line-height: 1.8;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#timer {
+    font-size: 23px;
+    color: #00e5b0;
+    font-variant-numeric: tabular-nums;
+}
+
+.hud-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    right: 35px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.speed-number {
+    font-size: 76px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1;
+}
+
+.speed-number small {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.speed-label, .nitro-title {
+    font-size: 12px;
+    color: #00e5b0;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+.nitro-box {
+    width: 200px;
+    text-align: right;
+}
+
+.nitro-track {
+    width: 100%;
+    height: 12px;
+    background: #26323b;
+    margin-top: 10px;
+    transform: skewX(-15deg);
+    overflow: hidden;
+}
+
+#nitro-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #00aaff, #00ffbc);
+    transition: width 0.1s;
+}
+
+#nitro-label {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        120deg,
+        rgba(3, 12, 25, 0.94),
+        rgba(0, 30, 45, 0.72)
+    );
+}
+
+.menu-content {
+    width: 90%;
+    max-width: 650px;
+}
+
+.menu-logo {
+    font-size: clamp(35px, 7vw, 65px);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #00e5b0;
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -2px;
+}
+
+.description {
+    color: #b4c6d2;
+    margin: 20px 0 35px;
+}
+
+button {
+    background: linear-gradient(100deg, #00bca0, #00e5b0);
+    border: none;
+    color: #001a1c;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    padding: 18px 55px;
+    cursor: pointer;
+    transform: skewX(-8deg);
+    transition: 0.2s;
+}
+
+button:hover {
+    background: white;
+    transform: skewX(-8deg) scale(1.05);
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 45px;
+    color: #9aabb8;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.version {
+    color: #526472;
+    margin-top: 40px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#center-message {
+    position: absolute;
+    z-index: 3;
+    top: 42%;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(50px, 12vw, 100px);
+    font-weight: 900;
+    font-style: italic;
+    color: #00e5b0;
+    text-shadow: 0 0 30px #00e5b088;
+    pointer-events: none;
+}
+
+#loading {
+    position: absolute;
+    inset: 0;
+    background: #050b13;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 4px;
+    font-weight: bold;
+    color: #00e5b0;
+}
+
+@media(max-width: 600px) {
+    #hud {
+        padding: 15px;
+    }
+
+    .hud-bottom {
+        left: 15px;
+        right: 15px;
+        bottom: 20px;
+    }
+
+    .speed-number {
+        font-size: 55px;
+    }
+
+    .nitro-box {
+        width: 130px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .instructions {
+        gap: 12px;
+    }
+}
+
